@@ -10,56 +10,127 @@
 </head>
 <body>
     <header>
-        
+        <div id="navbar">
+            <input type="checkbox" id="switch">
+            <div id="hamburguer">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                    <hr>
+                    <li class="nav-item"><a>Projetos em destaque</a></li>
+                    <hr>
+                    <li class="nav-item"><a>Contatos</a></li>
+                    <hr>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!------------------------------------------>    
 
     <main>
-        <section>
-            <div>
-                <img>
-                <img>
+        <section id="inicio">
+            <div class="foto">
+                <img src="resource/img/perfil.svg">
             </div>
-            <div>
-                <h1></h1>
-                <h2></h2>
+            <div class="texto">
+                <h1>Lucas Rasoppi</h1>
+                <h2>Desenvolvedor full-stack</h2>
+                <p></p>
                 <hr>
-                <button></button>
+                <button class="btn"><p>Contatos</p></button>
             </div>
         </section>
-        <section>
-            <h2></h2>
-            <p></p>
+
+        <section id="sobre">
+            <h2 class="titulo">Sobre mim</h2>
+            <div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with des</p>
+            </div>
         </section>
-        <section>
-            <h2></h2>
-            <ul></ul>
-            <button></button>
-        </section>
-        <section>
-            <h2></h2>
+
+        <section id="techs">
+            <h2 class="titulo">Tecnologias</h2>
             <ul>
-                <li>
-                    <iframe></iframe>
-                    <span>Clique para visualizar</span>
+                <li class="tec"><img src="resource/img/icon-html.svg"></li>
+                <li class="tec"><img src="resource/img/icon-css.svg"></li>
+                <li class="tec"><img src="resource/img/icon-javascript.svg"></li>
+                <li class="tec"><img src="resource/img/icon-php.svg"></li>
+                <li class="tec"><img src="resource/img/icon-git.svg"></li>
+            </ul>
+            <button class="btn"><p>Ver mais</p></button>
+        </section>
+
+        <section id="projetos">
+            <h2 class="titulo">Projetos em destaque</h2>
+            <ul>
+                <li class="card">
+                    <div class="frames">
+                        <iframe></iframe>
+                        <iframe></iframe>
+                    </div>
+                    <div>
+                        <h3>Titulo</h3>
+                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <ul>
+                        </ul>
+                        <p class="view">Visualizar</p>
+                    </div>
+                    <hr>
                 </li>
-                <li>
-                    <iframe></iframe>
-                    <span>Clique para visualizar</span>
+                <li class="card">
+                    <div class="frames">
+                        <iframe></iframe>
+                        <iframe></iframe>
+                    </div>
+                    <div>
+                        <h3>Titulo</h3>
+                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <ul>
+                        </ul>
+                        <p class="view">Visualizar</p>
+                    </div>
+                    <hr>
                 </li>
-                <li>
-                    <iframe></iframe>
-                    <span>Clique para visualizar</span>
+                <li class="card">
+                    <div class="frames">
+                        <iframe></iframe>
+                        <iframe></iframe>
+                    </div>
+                    <div>
+                        <h3>Titulo</h3>
+                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <ul>
+                        </ul>
+                        <p class="view">Visualizar</p>
+                    </div>
+                    <hr>
                 </li>
             </ul>
-            <button></button>
+            <button class="btn"><p>Ver mais</p></button>
+        </section>
+
+        <section id="contatos">
+            <h2 class="titulo">Contatos</h2>
+            <ul>
+                <li><a><img></a></li>
+                <li><a><img></a></li>
+                <li><a><img></a></li>
+            </ul>
         </section>
     </main>
     
     <!------------------------------------------>
 
-    <footer></footer>
+    <footer>
+        <div id="content">
+            <p>Todos os direitos reservados - Desenvolvido por <span>Lucas Rasoppi</span></p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
