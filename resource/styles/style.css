@@ -172,7 +172,7 @@ section{
 }
 
 #inicio{
-    height: calc(100vh + 125px);
+    height: calc(100vh + 100px);
 }
 
 #inicio > div.foto{
@@ -436,26 +436,10 @@ footer{
 }
 
 @media (min-width: 768px){
-
-    
-    header{
-        width: 100%;
-        height: 100px;
-        background: #000000;
-        display: flex;
-        position: fixed;
-        z-index: 10;
-    }
     
     #navbar{
-        height: 100%;
-        width: 80%;
         max-width: 950px;
-        margin: 0 auto;
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 0;
     }
 
     #hamburguer{
@@ -480,15 +464,17 @@ footer{
     #navbar hr{
         width: 2px;
         min-width: inherit;
-        height: 50%;
+        height: 25%;
         margin: 0;
         background: var(--gradient-min-45);
         border: none;
         border-top-left-radius: 5px;
         border-bottom-right-radius: 5px;
+        transition: all .4s;
     }
 
     .nav-item{
+        height: 100%;
         padding: 10px 25px;
         min-width: 150px;
     }
@@ -500,11 +486,46 @@ footer{
         justify-content: center;
         align-items: center;
         color: white;
+        font-family: var(--txt-font-istok);
+    }
+
+    #navbar hr:has(+ .nav-item:hover), #navbar .nav-item:hover + hr{
+        height: 100%;
+    }
+
+    .nav-item:hover{
+        background: linear-gradient(to top, rgba( 255, 255, 255, .2), rgba( 255, 255, 255, 0)); 
+    }
+
+    .nav-item:hover a{
+        text-shadow: 0px 0px 5px #D0D0D0; 
+    }
+
+    /*--------Página principal--------*/
+
+    main{
+        width: 100%;
+        max-width: inherit;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 185px 0;
+    }
+    
+    section{
+        width: 65%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #inicio{
+        flex-direction: row;
+        height: calc(100vh + 85px);
+        gap: 100px;
     }
 
     #inicio > div.foto{
-        width: 260px;
-        height: 260px;
+        width: 325px;
+        height: 325px;
         margin: 40px 0;
     }
     
@@ -514,46 +535,70 @@ footer{
     }
     
     #inicio > div.texto{
-        width: 100%;
+        width: inherit;
+        max-width: 350px;
         display: flex;
         flex-direction: column;
     }
     
-    #inicio > div.texto h1{
-        color: black;
-        font-family: var(--txt-font-inter);
-        font-weight: 600;
-        font-size: 1.75rem; 
-    }
-    
     #inicio > div.texto h2{
-        color: black;
-        font-family: var(--txt-font-istok);
-        font-weight: 400;
-        font-size: 1rem;
-        opacity: 60%;
-        margin-bottom: 38px; 
+        margin: 0; 
     }
     
     #inicio > div.texto > p{
-        display: none;
-    }
-    
-    hr{
-        width: 80%;
-        min-width: 100px;
-        height: 2px;
-        margin: 0 auto;
-        background: black;
-        margin-bottom: 30px;
-        border: none;
-        border-radius: 5px;
+        display: inline;
+        width: 100%;
+        margin: 30px 0;
+        font-family: var(--txt-font-inter);
+        font-size: .85rem;
+        font-weight: 500;
+        text-align: justify;
     }
     
     #inicio > div.texto button{
-        margin: 0 auto;
-        margin-bottom: 30px;
-        padding: 10px 65px;
-     
+        display: none;
+    }
+
+    #sobre{
+        display: none;
+    }
+
+    #techs{
+        margin-bottom: 160px;
+    }
+    
+    #techs h2{
+        margin: 0;
+    }
+    
+    #techs > ul{
+        width: 100%;
+        max-width: 250px;
+        margin: 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .tec{
+        width: 65px;
+        height: 65px;
+        justify-self: center;
+        background: linear-gradient(white, white) padding-box, var(--gradient-min-45) border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        border: 8px solid transparent;
+        margin: 6px;
+    }
+    
+    .tec img{
+        max-width: 40px;
+        object-fit: cover;
+    }
+    
+    #techs button{
+        margin-left: auto;
     }
 }
