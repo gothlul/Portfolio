@@ -3,11 +3,13 @@
 :root{
     --cor-azul-3d: #22C7F5;
     --cor-azul-6e: #1828B7;
-    --cor-azul-16-5: #050505;
-    --cor-cinza-7: #75757530;
-    --cor-cinza-c3: #c3c3c325;
-    --gradient-min-45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
-    --gradient-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
+    --cor-cinza-16: #050505;
+    --cor-cinza-7: #757575;
+    --cor-cinza-3: #C3C3C3;
+    --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
+    --gradient-azuldrk--45: linear-gradient( -45deg,  var(--cor-cinza-16), var(--cor-azul-6e));
+    --gradient-cinza--45: linear-gradient( -45deg, rgba( 255, 255, 255, .25), rgb(191, 191, 191, .25));
+    --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
 
     --txt-font-inter: "Inter", sans-serif;
     --txt-font-istok: "Istok Web", sans-serif;
@@ -61,7 +63,7 @@ header{
     width: 45px;
     height: 30px;
     appearance: none;
-    background: linear-gradient(white, white) padding-box, var(--gradient-min-45) border-box;
+    background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
     border-radius: 100px;
     position: relative;
     display: flex;
@@ -85,7 +87,7 @@ header{
 }
 
 #switch:checked{
-    background: linear-gradient(black, black) padding-box, var(--gradient-min-45) border-box;
+    background: linear-gradient(black, black) padding-box, var(--gradient-azul--45) border-box;
 }
 
 #switch:checked:before{
@@ -125,7 +127,7 @@ header{
 
 
 .btn{
-    background: linear-gradient(white, white) padding-box, var(--gradient-left) border-box;
+    background: linear-gradient(white, white) padding-box, var(--gradient-azul-left) border-box;
     padding: 8px 24px;
     border-radius: 100px;
     font-family: var(--txt-font-istok);
@@ -134,7 +136,7 @@ header{
 }
 
 .btn p{
-    background-image: var(--gradient-left);
+    background-image: var(--gradient-azul-left);
     color: black;
     background-clip: text;
     -webkit-background-clip: text;
@@ -142,7 +144,7 @@ header{
 }
 
 .btn:hover{
-    background: var(--gradient-left) border-box;
+    background: var(--gradient-azul-left) border-box;
 }
 
 .btn:hover p{
@@ -284,7 +286,7 @@ hr{
     width: 65px;
     height: 65px;
     justify-self: center;
-    background: linear-gradient(white, white) padding-box, var(--gradient-min-45) border-box;
+    background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -400,7 +402,7 @@ hr{
 }
 
 .card > hr{
-    background: var(--gradient-min-45);
+    background: var(--gradient-azul--45);
     border-radius: inherit;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -466,7 +468,7 @@ footer{
         min-width: inherit;
         height: 25%;
         margin: 0;
-        background: var(--gradient-min-45);
+        background: var(--gradient-azul--45);
         border: none;
         border-top-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -491,6 +493,7 @@ footer{
 
     #navbar hr:has(+ .nav-item:hover), #navbar .nav-item:hover + hr{
         height: 100%;
+        opacity: 0%;
     }
 
     .nav-item:hover{
@@ -499,6 +502,13 @@ footer{
 
     .nav-item:hover a{
         text-shadow: 0px 0px 5px #D0D0D0; 
+    }
+
+    /*--------Botões--------*/
+
+    .btn{
+        border-radius: 6px;
+        padding: 10px 40px;
     }
 
     /*--------Página principal--------*/
@@ -524,8 +534,10 @@ footer{
     }
 
     #inicio > div.foto{
-        width: 325px;
-        height: 325px;
+        width: 50%;
+        height: 50%;
+        max-width: 280px;
+        max-height: 280px;
         margin: 40px 0;
     }
     
@@ -573,32 +585,176 @@ footer{
     
     #techs > ul{
         width: 100%;
-        max-width: 250px;
+        max-width: 350px;
         margin: 30px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
     }
     
     .tec{
-        width: 65px;
         height: 65px;
-        justify-self: center;
-        background: linear-gradient(white, white) padding-box, var(--gradient-min-45) border-box;
+        width: 65px;
+        background: linear-gradient( -45deg, var(--cor-cinza-3), #c3c3c325) padding-box, transparent border-box;
+        border: 0px solid transparent;
+        transition: all .4s;
+        margin: 12px;
+    }
+    
+    .tec img{
+        opacity: 35%;
+    }
+    
+    .tec:hover{
+        height: 84px;
+        width: 84px;
+        background: linear-gradient( white, white) padding-box, var(--gradient-azul--45) border-box;
+        border: 12px solid transparent;
+        margin: 0;
+    }
+
+    .tec:hover img{
+        opacity: 100%;
+    }
+
+    #projetos{
+        width: 100%;
+        max-width: inherit;
+        background: var(--gradient-azuldrk--45);
+        padding: 0 17.5% 85px;
+    }
+
+    #projetos > div{
+        background: white;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
+        margin: 65px 0 40px;
+    }
+
+    #projetos h2{
+        background: var(--gradient-azul--45) text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+    }
+
+    #projetos > ul{
+        max-width: 800px;
+    }
+
+    .card{
+        width: calc(80% + 100px);
+        
+        background: var(--gradient-cinza--45);
+        border-radius: 10px;
+        padding: 18px 20px;
+        display: flex;
+    }
+
+    .card > .frames{
+        width: 50%;
+        padding: 23px 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    
+    .frames > iframe{
+        background: white;
+        border-color: #404040;
+        border-radius: 5px;
+    }
+    
+    .frames > iframe:first-child{
+        width: 10vw;
+        min-width: 20%;
+        height: 20vw;
+        min-height: 60%;
+        position: absolute;
+        z-index: 5;
+        border-width: 10px 5px;
+    }
+    
+    .frames > iframe:last-child{
+        width: 40vw;
+        min-width: 85%;
+        height: 30vw;
+        min-height: 80%;
+        margin-left: auto;
+        border-width: 5px 3px;
+    }
+    
+    .card > div:not(.frames){
+        display: flex;
+        max-width: 40%;
+        flex-direction: column;
+        padding: 0 20px 18px;
+    }
+    
+    .card > div > h3{
+        margin: 0 0 15px;
+        font-family: var(--txt-font-istok);
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .card > div > p{
+        text-align: justify;
+        font-family: var(--txt-font-istok);
+        text-indent: 20px;
+    }
+    
+    .card > div > ul{
+        width: 100%;
+        display: flex;
+        padding: 30px 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .card > div ul li{
+        width: 40px;
+        height: 40px;
+        background: #c3c3c3;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 100px;
-        border: 8px solid transparent;
-        margin: 6px;
+        opacity: .35;
     }
     
-    .tec img{
-        max-width: 40px;
+    .card > div ul li img{
+        max-width: 20px;
         object-fit: cover;
     }
     
-    #techs button{
-        margin-left: auto;
+    .card > div > .view{
+        display: none;
     }
+    
+    .card hr{
+        display: none;
+    }
+
+    #projetos .btn{
+        background: transparent;
+        border: 2px solid white;
+    }
+    
+    #projetos .btn p{
+        background: transparent;
+        color: white;
+        background-clip: inherit;
+        -webkit-background-clip: inherit;
+        -webkit-text-fill-color: inherit;
+    }
+    
+    #projetos .btn:hover{
+        background: var(--gradient-azul-left) border-box;
+        border-color: transparent;
+    }
+    
+
+
 }
