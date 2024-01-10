@@ -11,7 +11,10 @@
 <body>
     <header>
         <div id="navbar">
-            <input type="checkbox" id="switch">
+            <div id="navhome">
+                <h1>Lucas Rasoppi</h1>
+                <input type="checkbox" id="switch">
+            </div>
             <div id="hamburguer">
                 <div></div>
                 <div></div>
@@ -19,11 +22,15 @@
             </div>
             <nav>
                 <ul>
-                    <hr class="divisao">
-                    <li class="nav-item"><a>Projetos em destaque</a></li>
-                    <hr class="divisao">
-                    <li class="nav-item"><a>Contatos</a></li>
-                    <hr class="divisao">
+                    <hr>
+                    <li class="nav-item"><a href="#">Home</a></li>
+                    <hr>
+                    <li class="nav-item"><a href="#sobre">Sobre</a></li>
+                    <hr>
+                    <li class="nav-item"><a href="#techs">Skills</a></li>
+                    <hr>
+                    <li class="nav-item"><a href="#projetos">Projetos</a></li>
+                    <hr>
                 </ul>
             </nav>
         </div>
@@ -33,20 +40,26 @@
 
     <main>
         <section id="inicio">
+            <div class="texto">
+                <h2>Lucas Rasoppi</h2>
+                <h1>Desenvolvedor full-stack & UX/UI Disigner</h1>
+                <hr>
+                <ul id="contatos">
+                    <li><a class="rede"><img src="resource/img/icon-github.svg"></a></li>
+                    <li><a class="rede"><img src="resource/img/icon-linkedin.svg"></a></li>
+                    <li><a class="rede"><img src="resource/img/icon-email.svg"></a></li>
+                </ul>
+                <button class="btn"><p>Contatos</p></button>
+            </div>
             <div class="foto">
                 <img src="resource/img/perfil.svg">
-            </div>
-            <div class="texto">
-                <h1>Lucas Rasoppi</h1>
-                <h2>Desenvolvedor full-stack</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with des</p>
-                <hr>
-                <button class="btn"><p>Contatos</p></button>
             </div>
         </section>
 
         <section id="sobre">
-            <h2 class="titulo">Sobre mim</h2>
+            <div>
+                <h2 class="titulo">Sobre mim</h2>
+            </div>
             <div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with des</p>
             </div>
@@ -72,7 +85,6 @@
                 <li class="card">
                     <div class="frames">
                         <iframe></iframe>
-                        <iframe></iframe>
                     </div>
                     <div>
                         <h3>Titulo</h3>
@@ -88,7 +100,6 @@
                 <li class="card">
                     <div class="frames">
                         <iframe></iframe>
-                        <iframe></iframe>
                     </div>
                     <div>
                         <h3>Titulo</h3>
@@ -103,7 +114,6 @@
                 </li>
                 <li class="card">
                     <div class="frames">
-                        <iframe></iframe>
                         <iframe></iframe>
                     </div>
                     <div>
@@ -121,15 +131,6 @@
             <button class="btn"><p>Ver mais</p></button>
         </section>
 
-        <section id="contatos">
-            <h2 class="titulo">Contatos</h2>
-            <hr>
-            <ul>
-                <li><a class="link"><img src="resource/img/icon-github.svg">Github</a></li>
-                <li><a class="link"><img src="resource/img/icon-linkedin.svg">Linkedin</a></li>
-                <li><a class="link"><img src="resource/img/icon-email.svg">Email</a></li>
-            </ul>
-        </section>
     </main>
     
     <!------------------------------------------>
@@ -140,6 +141,6 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="resource/scripts/main.js"></script>
 </body>
 </html>
