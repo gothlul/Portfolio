@@ -8,6 +8,7 @@
     --cor-cinza-3: #C3C3C3;
     --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
     --gradient-azuldrk--45: linear-gradient( -45deg,  var(--cor-cinza-16), var(--cor-azul-6e));
+    --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e), var(--cor-cinza-16));
     --gradient-cinza--45-op: linear-gradient( -45deg, rgba( 255, 255, 255, .25), rgb(191, 191, 191, .25));
     --gradient-cinza--45: linear-gradient( -45deg, #C3C3C3, #E3E3E3);
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
@@ -287,6 +288,9 @@ hr{
 
 #techs{
     margin-bottom: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #techs h2{
@@ -635,16 +639,20 @@ footer{
     #sobre{
         width: 100%;
         max-width: inherit;
-        background: var(--gradient-azuldrk--45);
-        padding: 0 0 85px;
+        padding: 110px 0 85px;
         margin: 0;
+        background: var(--gradient-ocean);
+        background-size: 300% 300%;
+        animation-name: bgOcean;
+        animation-duration: 50s;
+        animation-iteration-count: infinite;
     }
 
     #sobre div:has(> h2){
         width: auto;
         background: white;
         padding: 20px 40px;
-        border-radius: 10px;
+        border-radius: 8px;
         box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
         margin: 65px 0 40px;
     }
@@ -658,185 +666,49 @@ footer{
     #sobre > div:not(:has(> h2)){
         width: 65%;
         max-width: 800px;
-        background: linear-gradient(to top, var(--cor-azul-6e), var(--cor-azul-3d));
-        display: flex;
-        justify-content: center;
-        border-radius: 6px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+        min-height: 200px;
+        background: none;
+        justify-content: space-between;
+        border-radius: 10px;
+        margin-bottom: 65px;
     }
     
+    #img-sobre{
+        width: 45%;
+        padding: 30px;
+    }
+
+    #img-sobre img{
+        width: 100%;
+        object-fit: cover;
+        animation: 0s ease-in-out 5s forwards surge-img;
+    }
+
     #sobre > div p{
-        width: 80%;
-        background: white;
-        padding: 30px 8px;
-        font-family: var(--txt-font-inter);
-        font-size: .85rem;
-        font-weight: 600;
-        text-align: justify;
+        width: 50%;
+        padding: 25px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
-    
-    #techs{
-        margin-bottom: 160px;
-    }
-    
-    #techs h2{
-        margin: 0;
-    }
-    
-    #techs > ul{
-        width: 100%;
-        max-width: 250px;
-        margin: 30px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .tec{
-        width: 65px;
-        height: 65px;
-        justify-self: center;
-        background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        border: 8px solid transparent;
-        margin: 6px;
-    }
-    
-    .tec img{
-        max-width: 40px;
-        object-fit: cover;
-    }
-    
-    #techs button{
-        margin-left: auto;
-    }
-    
-    #projetos > ul{
-        width: 100%;
-        margin: 50px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-    
-    .card{
-        width: 100%;
-        min-height: 175px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .card > .frames{
-        width: 100%;
-        padding: 23px 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-    
-    .frames > iframe{
-        background: white;
-        border-color: #404040;
-        border-radius: 5px;
-    }
-    
-    .frames > iframe:first-child{
-        width: 10vw;
-        min-width: 20%;
-        height: 20vw;
-        min-height: 60%;
-        position: absolute;
-        z-index: 5;
-        border-width: 10px 5px;
-    }
-    
-    .frames > iframe:last-child{
-        width: 40vw;
-        min-width: 85%;
-        height: 30vw;
-        min-height: 80%;
-        margin-left: auto;
-        border-width: 5px 3px;
-    }
-    
-    .card > div:not(.frames){
-        display: flex;
-        flex-direction: column;
-        padding: 0 20px 18px;
-    }
-    
-    .card > div > h3{
-        margin: 0 0 15px;
-        font-family: var(--txt-font-istok);
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-    
-    .card > div p{
-        text-align: justify;
-        font-family: var(--txt-font-istok);
-        text-indent: 20px;
-    }
-    
-    .card > div > ul{
-        width: 100%;
-        display: flex;
-        padding: 30px 0;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    
-    .card > div ul li{
-        width: 40px;
-        height: 40px;
-        background: #c3c3c3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        opacity: .35;
-    }
-    
-    .card > div ul li img{
-        max-width: 20px;
-        object-fit: cover;
-    }
-    
-    .view{
-        display: none;
-    }
-    
-    .card > hr{
-        border-radius: inherit;
-        border-bottom-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
-
-
-    
 
     #techs{
-        margin-bottom: 160px;
-        padding-top: 110px;
-    }
-    
-    #techs h2{
-        margin: 0;
-    }
-    
-    #techs > ul{
-        width: 100%;
+        margin: 0 auto;
+        padding: 110px 0 85px;
+        min-height: 100vh;
         max-width: 350px;
+    }
+    
+    #techs h2{
+        margin-top: 30px;
+    }
+    
+    #techs > ul{
+        width: 100%;
+        max-width: inherit;
         margin: 30px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 70px 70px 70px;
+        gap: 20px 20px;
     }
     
     .tec{
@@ -1008,7 +880,7 @@ footer{
     }
 
     .card:hover .view p{
-        animation-name: surge;
+        animation-name: surge-esq;
         animation-duration: .4s;
         animation-fill-mode: forwards;
     }
@@ -1031,7 +903,7 @@ footer{
         border-color: transparent;
     }
 
-    @keyframes surge {
+    @keyframes surge-esq{
         0%{
             opacity: 0%;
             left: 0;
@@ -1046,6 +918,40 @@ footer{
             opacity: 100%;
             left: 100%;
             transform: translateX(-100%);
+        }
+    }
+
+    @keyframes bgOcean{
+        0%{
+            background-position: 5% 5%;
+        }
+
+        25%{
+            background-position: 5% 95%;
+        }
+
+        50%{
+            background-position: 95% 95%;
+        }
+
+        75%{
+            background-position: 95% 5%;
+        }
+
+        100%{
+            background-position: 5% 5%;
+        }
+    }
+
+    @keyframes surge-img{
+        0%{
+            opacity: 0%;
+            transform: scale(0);
+        }
+
+        100%{
+            opacity: 100%;
+            transform: scale(1);
         }
     }
     
