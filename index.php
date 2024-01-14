@@ -70,6 +70,7 @@
 
         <section id="techs">
             <h2 class="titulo">Tecnologias</h2>
+            <hr>
             <ul>
                 <li class="tec"><img src="resource/img/icon-html.svg"></li>
                 <li class="tec"><img src="resource/img/icon-css.svg"></li>
@@ -81,54 +82,50 @@
         </section>
 
         <section id="projetos">
-            <div>
-                <h2 class="titulo">Projetos em destaque</h2>
-            </div>
+            <h2 class="titulo">Projetos em destaque</h2>
+            <hr>
             <ul>
                 <li class="card">
-                    <div class="frames">
+                    <div class="capa">
                         <iframe></iframe>
                     </div>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <h3></h3>
+                        <p></p>
                         <ul>
                         </ul>
                         <div class="view">
                             <p>Visualizar</p>
                         </div>
                     </div>
-                    <hr>
                 </li>
                 <li class="card">
-                    <div class="frames">
+                    <div class="capa">
                         <iframe></iframe>
                     </div>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <h3></h3>
+                        <p></p>
                         <ul>
                         </ul>
                         <div class="view">
                             <p>Visualizar</p>
                         </div>
                     </div>
-                    <hr>
                 </li>
                 <li class="card">
-                    <div class="frames">
+                    <div class="capa">
                         <iframe></iframe>
                     </div>
                     <div>
-                        <h3>Titulo</h3>
-                        <p>uma descrição do projeto que tenha um paragrafo de pelo menos 3 linhas de altura</p>
+                        <h3></h3>
+                        <p></p>
                         <ul>
                         </ul>
                         <div class="view">
                             <p>Visualizar</p>
                         </div>
                     </div>
-                    <hr>
                 </li>
             </ul>
             <button class="btn"><p>Ver mais</p></button>

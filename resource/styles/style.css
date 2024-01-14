@@ -43,10 +43,11 @@ header{
     display: flex;
     position: fixed;
     z-index: 10;
-    transition: box-shadow .4s, background-color .2s;
+    transition: background-color .2s, height .2s;
 }
 
 header.scroll{
+    height: 95px;
     background: rgba( 255, 255, 255, .95);
     backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px rgba( 0, 0, 0, .5);
@@ -151,8 +152,11 @@ header.scroll{
 }
 
 .btn p{
+    width: 100%;
+    height: 100%;
     background-image: var(--gradient-azul-left);
     color: black;
+    text-align: center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -173,16 +177,18 @@ header.scroll{
 
 /*--------Página principal--------*/
 
-
 main{
-    width: 65%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 85px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 85px 0 50px;
 }
 
 section{
-    width: 100%;
+    width: 65%;
+    max-width: 800px;
+    padding: 110px 0 85px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,6 +197,7 @@ section{
 
 #inicio{
     height: calc(100vh + 100px);
+    padding: 0 0 85px;
 }
 
 
@@ -198,6 +205,8 @@ section{
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: start;
+
 }
 
 #inicio > div.texto h1{
@@ -224,7 +233,6 @@ hr{
     min-width: 100px;
     height: 2px;
     margin: 0 auto;
-    background: black;
     margin: 30px 0;
     border: none;
     background: var(--gradient-azul--45);
@@ -248,49 +256,67 @@ hr{
     height: 100%;
 }
 
-#inicio > div.texto button{
-    margin: 0 auto;
-    margin-bottom: 30px;
-    padding: 10px 65px;
-    
-}
-
 .titulo{
     font-family: var(--txt-font-inter);
     font-weight: 600;
     font-size: 1.75rem;
     text-align: center;
-    margin: 30px 0;
+}
+
+.titulo + hr{
+    display: none;
+}
+
+#img-sobre{
+    display: none;
 }
 
 #sobre{
-    margin-bottom: 175px;
+    width: 100%;
+    max-width: inherit;
+    background: var(--gradient-ocean);
+    background-size: 300% 300%;
+    animation: 50s infinite bgOcean;
+    box-shadow: 0px 0px 10px rgba( 0, 0, 0, .3);
+}
+
+#sobre div:has(> h2){
+    width: auto;
+    background: white;
+    padding: 10px 40px;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
+}
+
+#sobre .titulo{
+    background: var(--gradient-azul--45);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #sobre > div:not(:has(> h2)){
-    width: 100%;
-    background: linear-gradient(to top, var(--cor-azul-6e), var(--cor-azul-3d));
+    width: 65%;
+    max-width: 350px;
     display: flex;
     justify-content: center;
-    border-radius: 6px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    margin: 25px 0 40px;
 }
 
 #sobre > div p{
-    width: 80%;
+    width: 100%;
+    border-radius: 6px;
     background: white;
-    padding: 30px 8px;
     font-family: var(--txt-font-inter);
     font-size: .85rem;
     font-weight: 600;
     text-align: justify;
+    padding: 25px;
 }
 
 #techs{
-    margin-bottom: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 250px;
 }
 
 #techs h2{
@@ -299,89 +325,80 @@ hr{
 
 #techs > ul{
     width: 100%;
-    max-width: 250px;
-    margin: 30px 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    grid-template-rows: repeat(auto-fill, 70px);
+    align-items: center;
     justify-content: center;
+    justify-items: center;
+    margin: 30px 0;
+    gap: 15px;
 }
 
 .tec{
     width: 65px;
     height: 65px;
-    justify-self: center;
-    background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
     border-radius: 100px;
     border: 8px solid transparent;
-    margin: 6px;
 }
 
 .tec img{
-    max-width: 40px;
+    max-width: 25px;
     object-fit: cover;
-}
-
-#techs button{
-    margin-left: auto;
 }
 
 #projetos > ul{
     width: 100%;
     margin: 50px 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-rows: repeat(auto-fill, minmax(450px, auto));
+    justify-items: center;
     align-items: center;
-    gap: 50px;
+    justify-content: center;
+    gap: 50px 20px;
 }
 
 .card{
     width: 100%;
-    min-height: 175px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card > .frames{
-    width: 100%;
-    padding: 23px 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.frames > iframe{
-    background: white;
-    border-color: #404040;
-    border-radius: 5px;
-}
-
-.frames > iframe:first-child{
-    width: 10vw;
-    min-width: 20%;
-    height: 20vw;
-    min-height: 60%;
-    position: absolute;
-    z-index: 5;
-    border-width: 10px 5px;
-}
-
-.frames > iframe:last-child{
-    width: 40vw;
-    min-width: 85%;
-    height: 30vw;
-    min-height: 80%;
-    margin-left: auto;
-    border-width: 5px 3px;
-}
-
-.card > div:not(.frames){
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 20px 18px;
+    background: white;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 0px 5px rgba( 0, 0, 0, .3);
+    border: none;
+    border-radius: 8px;
+}
+
+.card > div{
+    width: 100%;
+}
+
+.capa{
+    flex-grow: 1;
+}
+
+.capa > iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: white;
+    position: relative;
+    border: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.card > div:not(.capa){
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .card > div > h3{
@@ -399,15 +416,16 @@ hr{
 
 .card > div > ul{
     width: 100%;
-    display: flex;
-    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30px);
+    grid-template-rows: repeat(auto-fill, 30px);
+    margin: 20px 0 auto; 
     gap: 10px;
-    flex-wrap: wrap;
 }
 
-.card > div ul li{
-    width: 40px;
-    height: 40px;
+.tec-projeto{
+    width: 30px;
+    height: 30px;
     background: #c3c3c3;
     display: flex;
     justify-content: center;
@@ -416,19 +434,13 @@ hr{
     opacity: .35;
 }
 
-.card > div ul li img{
-    max-width: 20px;
+.tec-projeto img{
+    max-width: 18px;
     object-fit: cover;
 }
 
 .view{
     display: none;
-}
-
-.card > hr{
-    border-radius: inherit;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
 }
 
 footer{
@@ -636,31 +648,10 @@ footer{
         height: 100%;
     }
 
-    #sobre{
-        width: 100%;
-        max-width: inherit;
-        padding: 110px 0 85px;
-        margin: 0;
-        background: var(--gradient-ocean);
-        background-size: 300% 300%;
-        animation-name: bgOcean;
-        animation-duration: 50s;
-        animation-iteration-count: infinite;
-    }
-
-    #sobre div:has(> h2){
-        width: auto;
-        background: white;
-        padding: 20px 40px;
-        border-radius: 8px;
-        box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
-        margin: 65px 0 40px;
-    }
-
-    #sobre .titulo{
-        background: var(--gradient-azul--45) text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
+    .titulo + hr{
+        display: block;
+        margin: 20px 0 0;
+        width: 240px;
     }
 
     #sobre > div:not(:has(> h2)){
@@ -674,6 +665,7 @@ footer{
     }
     
     #img-sobre{
+        display: block;
         width: 45%;
         padding: 30px;
     }
@@ -681,12 +673,12 @@ footer{
     #img-sobre img{
         width: 100%;
         object-fit: cover;
-        animation: 0s ease-in-out 5s forwards surge-img;
+        animation:  5s ease-in-out forwards surge-img scroll;
     }
 
     #sobre > div p{
         width: 50%;
-        padding: 25px;
+        border-radius: 0;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     }
@@ -695,40 +687,34 @@ footer{
         margin: 0 auto;
         padding: 110px 0 85px;
         min-height: 100vh;
-        max-width: 350px;
-    }
-    
-    #techs h2{
-        margin-top: 30px;
+        max-width: 300px;
     }
     
     #techs > ul{
-        width: 100%;
-        max-width: inherit;
-        margin: 30px 0;
-        display: grid;
-        grid-template-columns: 70px 70px 70px;
-        gap: 20px 20px;
+        grid-template-columns: repeat(auto-fill, 75px);
+        grid-template-rows: repeat(auto-fill, 90px);
+        gap: 20px;
     }
-    
+
     .tec{
-        height: 65px;
-        width: 65px;
-        background: linear-gradient( -45deg, var(--cor-cinza-3), #c3c3c325) padding-box, transparent border-box;
-        border: 0px solid transparent;
+        width: 75px;
+        height: 90px;
+        background: linear-gradient( -45deg, var(--cor-cinza-3), #c3c3c325);
+        border-radius: 6px;
+        border: none;
         transition: all .4s;
-        margin: 12px;
     }
     
     .tec img{
+        width: 30px;
+        max-width: inherit;
         opacity: 35%;
     }
     
     .tec:hover{
-        height: 84px;
-        width: 84px;
-        background: linear-gradient( white, white) padding-box, var(--gradient-azul--45) border-box;
-        border: 12px solid transparent;
+        scale: 1.1;
+        background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
+        border: 10px solid transparent;
         margin: 0;
     }
 
@@ -737,108 +723,29 @@ footer{
     }
 
     #projetos{
-        width: 100%;
-        max-width: inherit;
-        background: var(--gradient-azuldrk--45);
-        padding: 0 17.5% 85px;
-    }
-
-    #projetos > div{
-        background: white;
-        padding: 20px 40px;
-        border-radius: 10px;
-        box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
-        margin: 65px 0 40px;
-    }
-
-    #projetos h2{
-        background: var(--gradient-azul--45) text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
+        padding: 110px 0;            
     }
 
     #projetos > ul{
         max-width: 800px;
+        gap: 25px;
     }
 
     .card{
-        width: 80%;
         background: var(--gradient-cinza--45);
-        border-radius: 10px;
-        padding: 0;
-        display: flex;
         justify-content: space-between;
-        min-height: inherit;
-        align-items: center;
         transition: all .4s;
     }
 
-    .card > .frames{
-        width: 50%;
-        height: 20vh;
-        padding: 0 5%;
-    }
-    
-    .frames > iframe{
+    .card > div:not(.capa){
         background: white;
-        border-color: #404040;
-        border-radius: 5px;
-    }
-    
-    .frames > iframe:first-child{
-        width: 20%;
-        height: 70%;
-        min-width: 7vh;
-        min-height: inherit;
-    }
-    
-    .frames > iframe:last-child{
-        width: 90%;
-        max-width: 40vh;
-        height: 100%;
-        min-width: inherit;
-        min-height: inherit;
-    }
-    
-    .card > div:not(.frames){
-        width: 50%;
-        min-height: 280px;
-        padding: 10% 5%;
-    }
-
-    .card > div > h3{
-        color: white;
-        text-shadow: 0px 0px 5px rgba( 0, 0, 0, .25);
-    }
-    
-    .card > div p{
-        color: white;
-        text-shadow: 0px 0px 5px rgba( 0, 0, 0, .25);
-    }
-    
-    .card > div > ul{
-        margin: 25px 0 auto;
-        padding: 0;
-    }
-    
-    .card > div ul li{
-        width: 40px;
-        height: 40px;
-        background: #c3c3c3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        opacity: .35;
-    }
-    
-    .card > div ul li img{
-        max-width: 20px;
-        object-fit: cover;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
     }
     
     .card .view{
         width: 100%;
+        margin-top: 10px;
         display: flex;
     }
     
@@ -860,99 +767,69 @@ footer{
     }
 
     .card:hover{
+        scale: 1.02;
         background: var(--gradient-azul--45);
+        box-shadow: 0px 0px 8px rgba( 0, 0, 0, .4);
     }
 
-    .card:hover > div > h3{
-        color: black;
-        text-shadow: 0px 0px 5px rgba( 0, 0, 0, .25);
-    }
-
-    .card:hover > div > p{
-        color: black;
-        text-shadow: 0px 0px 5px rgba( 0, 0, 0, .25);
-    }
-
-    .card:hover > div:not(.frames){
-        background: white;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+    .card:hover .capa{
+        backdrop-filter: inherit;
     }
 
     .card:hover .view p{
-        animation-name: surge-esq;
-        animation-duration: .4s;
-        animation-fill-mode: forwards;
+        animation: surge-esq .4s forwards;
     }
     
-    #projetos .btn{
-        background: transparent;
-        border: 2px solid white;
-    }
-    
-    #projetos .btn p{
-        background: transparent;
-        color: white;
-        background-clip: inherit;
-        -webkit-background-clip: inherit;
-        -webkit-text-fill-color: inherit;
-    }
-    
-    #projetos .btn:hover{
-        background: var(--gradient-azul-left) border-box;
-        border-color: transparent;
+
+}
+
+@keyframes bgOcean{
+    0%{
+        background-position: 5% 5%;
     }
 
-    @keyframes surge-esq{
-        0%{
-            opacity: 0%;
-            left: 0;
-        }
+    25%{
+        background-position: 5% 95%;
+    }
+
+    50%{
+        background-position: 95% 95%;
+    }
+
+    75%{
+        background-position: 95% 5%;
+    }
+
+    100%{
+        background-position: 5% 5%;
+    }
+}
+
+@keyframes surge-img{
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+        bottom: 0;
+    }
+}
+
+@keyframes surge-esq{
+    0%{
+        opacity: 0%;
+        left: 0;
+    }
+    
+    50%{
+        opacity: 45%;
         
-        50%{
-            opacity: 45%;
-            
-        }
-        
-        100%{
-            opacity: 100%;
-            left: 100%;
-            transform: translateX(-100%);
-        }
-    }
-
-    @keyframes bgOcean{
-        0%{
-            background-position: 5% 5%;
-        }
-
-        25%{
-            background-position: 5% 95%;
-        }
-
-        50%{
-            background-position: 95% 95%;
-        }
-
-        75%{
-            background-position: 95% 5%;
-        }
-
-        100%{
-            background-position: 5% 5%;
-        }
-    }
-
-    @keyframes surge-img{
-        0%{
-            opacity: 0%;
-            transform: scale(0);
-        }
-
-        100%{
-            opacity: 100%;
-            transform: scale(1);
-        }
     }
     
+    100%{
+        opacity: 100%;
+        left: 100%;
+        transform: translateX(-100%);
+    }
 }
