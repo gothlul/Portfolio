@@ -1,20 +1,52 @@
 @import url(../fonts/fonts.css);
 
 :root{
+    --cor-bg-defult: linear-gradient(to top, #FEFEFE, #FFFFFF);
+    --cor-nav-motion: rgba( 255, 255, 255, .95);
+
     --cor-azul-3d: #22C7F5;
     --cor-azul-6e: #1828B7;
     --cor-cinza-16: #050505;
     --cor-cinza-7: #757575;
     --cor-cinza-3: #C3C3C3;
+
     --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
-    --gradient-azuldrk--45: linear-gradient( -45deg,  var(--cor-cinza-16), var(--cor-azul-6e));
     --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e), var(--cor-cinza-16));
-    --gradient-cinza--45-op: linear-gradient( -45deg, rgba( 255, 255, 255, .25), rgb(191, 191, 191, .25));
-    --gradient-cinza--45: linear-gradient( -45deg, #C3C3C3, #E3E3E3);
+    --gradient-cinza--45: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .08));
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
+
+    --bg-btn: white;
+    --bg-tec: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .05));
+    --bg-card: white;  
+
+    --text-color: black;
+    --cor-nav-text: linear-gradient(to top, #000000, #4a4a4a);
 
     --txt-font-inter: "Inter", sans-serif;
     --txt-font-istok: "Istok Web", sans-serif;
+}
+
+body.drk{
+    --cor-bg-defult: linear-gradient(to top, #151515, #202020);
+    --cor-nav-motion: rgba( 33, 33, 33, .95);
+
+    --cor-azul-3d: #22C7F5;
+    --cor-azul-6e: #2b3ee6;
+    --cor-cinza-16: #050505;
+    --cor-cinza-7: #757575;
+    --cor-cinza-3: #C3C3C3;
+
+    --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
+    --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e), var(--cor-cinza-16));
+    --gradient-cinza--45: linear-gradient( -45deg, rgba( 255, 255, 255, .1), rgba( 255, 255, 255, .25));
+    --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
+    
+    --bg-btn: #202020;
+    --bg-tec: linear-gradient( -45deg, rgba( 255, 255, 255, .01), rgba( 255, 255, 255, .15));
+    --bg-card: var(--cor-cinza-3);
+    
+    --text-color: white;
+    --cor-nav-text: linear-gradient(to top, #EDEDED, #FFFFFF);
 }
 
 *{
@@ -28,7 +60,7 @@
 body{
     min-height: 100vh;
     width: 100%;
-    background: white;
+    background: var(--cor-bg-defult);
 }
 
 body.dark{
@@ -48,7 +80,7 @@ header{
 
 header.scroll{
     height: 95px;
-    background: rgba( 255, 255, 255, .95);
+    background: var(--cor-nav-motion);
     backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px rgba( 0, 0, 0, .5);
 }
@@ -95,7 +127,7 @@ header.scroll{
     content: '';
     width: 22px;
     height: 22px;
-    background: url(../img/icon-sun-bg.svg) no-repeat center center;
+    background: url(../img/icons/icon-sun-bg.svg) no-repeat center center;
     background-size: cover;
     position: absolute;
     border-radius: 100px;
@@ -105,11 +137,11 @@ header.scroll{
 }
 
 #switch:checked{
-    background: linear-gradient(black, black) padding-box, var(--gradient-azul--45) border-box;
+    background: linear-gradient(#202020, #202020) padding-box, var(--gradient-azul--45) border-box;
 }
 
 #switch:checked:before{
-    background: url(../img/icon-moon-bg.svg) no-repeat center center;
+    background: url(../img/icons/icon-moon-bg.svg) no-repeat center center;
     transform: translateX(30%);
 }
 
@@ -143,7 +175,7 @@ header.scroll{
 
 
 .btn{
-    background: linear-gradient(white, white) padding-box, var(--gradient-azul-left) border-box;
+    background: linear-gradient(var(--bg-btn), var(--bg-btn)) padding-box, var(--gradient-azul-left) border-box;
     padding: 8px 24px;
     border-radius: 100px;
     font-family: var(--txt-font-istok);
@@ -154,8 +186,7 @@ header.scroll{
 .btn p{
     width: 100%;
     height: 100%;
-    background-image: var(--gradient-azul-left);
-    color: black;
+    background: var(--gradient-azul-left);
     text-align: center;
     background-clip: text;
     -webkit-background-clip: text;
@@ -210,7 +241,7 @@ section{
 }
 
 #inicio > div.texto h1{
-    color: black;
+    color: var(--text-color);
     font-family: var(--txt-font-inter);
     font-weight: 600;
     font-size: 1.75rem; 
@@ -257,6 +288,7 @@ hr{
 }
 
 .titulo{
+    color: var(--text-color);
     font-family: var(--txt-font-inter);
     font-weight: 600;
     font-size: 1.75rem;
@@ -369,7 +401,7 @@ hr{
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--bg-card);
     align-items: center;
     gap: 10px;
     box-shadow: 0px 0px 5px rgba( 0, 0, 0, .3);
@@ -389,8 +421,6 @@ hr{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background: white;
-    position: relative;
     border: none;
     border-radius: 8px 8px 0 0;
 }
@@ -426,7 +456,7 @@ hr{
 .tec-projeto{
     width: 30px;
     height: 30px;
-    background: #c3c3c3;
+    background: var(--cor-cinza-3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -435,7 +465,7 @@ hr{
 }
 
 .tec-projeto img{
-    max-width: 18px;
+    max-width: 16px;
     object-fit: cover;
 }
 
@@ -445,8 +475,8 @@ hr{
 
 footer{
     width: 100%;
-    height: 175px;
-    background: linear-gradient(to top, #101010, #404040);
+    height: 200px;
+    background: linear-gradient(to top, #202020, #404040);
     padding: 35px;
 }
 
@@ -530,7 +560,7 @@ footer{
         display:  flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to top, #000000, #4a4a4a);
+        background: var(--cor-nav-text);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -550,6 +580,10 @@ footer{
 
     .nav-item:hover a{
         text-shadow: 0px 0px 1px rgba( 0, 0, 0, .3); 
+    }
+
+    .drk .nav-item:hover a{
+        text-shadow: 0px 0px 1px rgba( 255, 255, 255, .3); 
     }
 
     /*--------Botões--------*/
@@ -589,7 +623,7 @@ footer{
     }
     
     #inicio > div.texto h1{
-        color: black;
+        color: var(--text-color);
         font-family: var(--txt-font-inter);
         font-weight: 600;
         font-size: 2rem; 
@@ -624,11 +658,23 @@ footer{
     .rede img{
         width: 100%;
         object-fit: cover;
+        opacity: .4;
+    }
+
+    .drk .rede img, .drk .tec img{
+        filter: invert(1);
+        -webkit-filter: invert(1);
     }
 
     #contatos li:hover .rede{
         background: var(--gradient-azul--45);
         box-shadow: 0px 2px 2px rgba( 0, 0, 0, .25);
+    }
+
+    li:hover .rede img{
+        filter: invert(1);
+        -webkit-filter: invert(1);
+        opacity: 100%;
     }
     
     #inicio > div.texto button{
@@ -699,7 +745,7 @@ footer{
     .tec{
         width: 75px;
         height: 90px;
-        background: linear-gradient( -45deg, var(--cor-cinza-3), #c3c3c325);
+        background: var(--bg-tec);
         border-radius: 6px;
         border: none;
         transition: all .4s;
@@ -719,6 +765,8 @@ footer{
     }
 
     .tec:hover img{
+        filter: inherit;
+        -webkit-filter: inherit;
         opacity: 100%;
     }
 
@@ -737,8 +785,13 @@ footer{
         transition: all .4s;
     }
 
+    .capa img{
+        filter: grayscale(0);
+        -webkit-filter: drop-shadow(0);
+    }
+
     .card > div:not(.capa){
-        background: white;
+        background: var(--bg-card);
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
     }
@@ -762,24 +815,31 @@ footer{
         -webkit-text-fill-color: transparent;
     }
 
-    .card hr{
-        display: none;
-    }
-
     .card:hover{
         scale: 1.02;
         background: var(--gradient-azul--45);
         box-shadow: 0px 0px 8px rgba( 0, 0, 0, .4);
     }
 
-    .card:hover .capa{
-        backdrop-filter: inherit;
+    .card .capa img{
+        filter: grayscale(0);
+        -webkit-filter: drop-shadow(0);
+    }
+
+    .card:hover > div:not(.capa){
+        background: white;
     }
 
     .card:hover .view p{
         animation: surge-esq .4s forwards;
     }
-    
+
+    .card:hover .tec-projeto{
+        background: white;
+        box-shadow: 0px 2px 5px rgba( 0, 0, 0, .3);
+        opacity: 100%;
+    }
+        
 
 }
 
