@@ -719,7 +719,9 @@ footer{
     #img-sobre img{
         width: 100%;
         object-fit: cover;
-        animation:  5s ease-in-out forwards surge-img scroll;
+        animation: 1ms ease-in-out forwards surge-img;
+        animation-timeline: view();
+        animation-range: cover 0% cover 45%;
     }
 
     #sobre > div p{
@@ -868,11 +870,12 @@ footer{
 @keyframes surge-img{
     0%{
         opacity: 0%;
+        scale: 0.5;
     }
 
     100%{
         opacity: 100%;
-        bottom: 0;
+        scale: 1;
     }
 }
 
