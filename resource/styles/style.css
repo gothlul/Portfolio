@@ -1,4 +1,5 @@
 @import url(../fonts/fonts.css);
+@import url(frames.css);
 
 :root{
     --cor-bg-defult: linear-gradient(to top, #FEFEFE, #FFFFFF);
@@ -31,7 +32,7 @@ body.drk{
     --cor-nav-motion: rgba( 33, 33, 33, .95);
 
     --cor-azul-3d: #22C7F5;
-    --cor-azul-6e: #2b3ee6;
+    --cor-azul-6e: #1828B7;
     --cor-cinza-16: #050505;
     --cor-cinza-7: #757575;
     --cor-cinza-3: #C3C3C3;
@@ -224,6 +225,9 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: 1ms ease-in-out forwards surge-bottom;
+    animation-timeline: view();
+    animation-range: cover 0% cover 45%;
 }
 
 #inicio{
@@ -407,6 +411,9 @@ hr{
     box-shadow: 0px 0px 5px rgba( 0, 0, 0, .3);
     border: none;
     border-radius: 8px;
+    animation: 1ms ease-in-out forwards surge-card;
+    animation-timeline: view();
+    animation-range: cover 0% cover 35%;
 }
 
 .card > div{
@@ -843,56 +850,4 @@ footer{
     }
         
 
-}
-
-@keyframes bgOcean{
-    0%{
-        background-position: 5% 5%;
-    }
-
-    25%{
-        background-position: 5% 95%;
-    }
-
-    50%{
-        background-position: 95% 95%;
-    }
-
-    75%{
-        background-position: 95% 5%;
-    }
-
-    100%{
-        background-position: 5% 5%;
-    }
-}
-
-@keyframes surge-img{
-    0%{
-        opacity: 0%;
-        scale: 0.5;
-    }
-
-    100%{
-        opacity: 100%;
-        scale: 1;
-    }
-}
-
-@keyframes surge-esq{
-    0%{
-        opacity: 0%;
-        left: 0;
-    }
-    
-    50%{
-        opacity: 45%;
-        
-    }
-    
-    100%{
-        opacity: 100%;
-        left: 100%;
-        transform: translateX(-100%);
-    }
 }
