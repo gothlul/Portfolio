@@ -23,7 +23,7 @@
 @keyframes surge-img{
     0%{
         opacity: 0%;
-        transform: translateY(-50px);
+        transform: translateY(50px);
     }
 
     100%{
