@@ -4,21 +4,26 @@
 :root{
     --cor-bg-defult: linear-gradient(to top, #FEFEFE, #FFFFFF);
     --cor-nav-motion: rgba( 255, 255, 255, .95);
-
+    
     --cor-azul-3d: #22C7F5;
     --cor-azul-6e: #1828B7;
+    --cor-azul-12: #141c66;
+    --cor-azul-14: #171b3f;
+    --cor-azul-16-o: #090c27D9;
     --cor-cinza-16: #050505;
     --cor-cinza-7: #757575;
     --cor-cinza-3: #C3C3C3;
 
     --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
-    --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e), var(--cor-cinza-16));
+    --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e));
     --gradient-cinza--45: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .08));
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
+    --gradient-footer: linear-gradient( to top, var(--cor-azul-14), var(--cor-azul-12));
 
     --bg-btn: white;
     --bg-tec: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .05));
     --bg-card: white;  
+    --img-fundo: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
 
     --text-color: black;
     --cor-nav-text: linear-gradient(to top, #000000, #4a4a4a);
@@ -38,7 +43,7 @@ body.drk{
     --cor-cinza-3: #C3C3C3;
 
     --gradient-azul--45: linear-gradient( -45deg, var(--cor-azul-6e), var(--cor-azul-3d));
-    --gradient-ocean: radial-gradient(var(--cor-azul-3d), var(--cor-azul-6e), var(--cor-cinza-16));
+    --gradient-ocean: radial-gradient(#C8EADE, var(--cor-azul-3d), var(--cor-azul-6e));
     --gradient-cinza--45: linear-gradient( -45deg, rgba( 255, 255, 255, .1), rgba( 255, 255, 255, .25));
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
     
@@ -56,6 +61,7 @@ body.drk{
     list-style: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    text-decoration: none;
 }
 
 body{
@@ -72,7 +78,7 @@ body.dark{
 
 header{
     width: 100%;
-    height: 110px;
+    height: 100px;
     display: flex;
     position: fixed;
     z-index: 10;
@@ -219,7 +225,7 @@ main{
 section{
     width: 65%;
     max-width: 800px;
-    padding: 110px 0 85px;
+    padding: 110px 0 95px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -283,7 +289,7 @@ hr{
     height: 66vw;
     max-width: 260px;
     max-height: 260px;
-    margin: 40px 0;
+    margin: 80px 0;
 }
 
 #inicio > div.foto img{
@@ -303,41 +309,34 @@ hr{
     display: none;
 }
 
-#img-sobre{
-    display: none;
-}
-
 #sobre{
+    position: relative;
     width: 100%;
     max-width: inherit;
-    background: var(--gradient-ocean);
+    background: var(--gradient-ocean) center center;
     background-size: 300% 300%;
+    background-attachment: fixed;
     animation: 50s infinite bgOcean;
     box-shadow: 0px 0px 10px rgba( 0, 0, 0, .3);
 }
 
-#sobre div:has(> h2){
+#sobre #titulo{
     width: auto;
     background: white;
     padding: 10px 40px;
     border-radius: 8px;
     box-shadow: inset 0px 0px 15px rgba( 0, 0, 0, .3);
+    z-index: 5;
 }
 
-#sobre .titulo{
-    background: var(--gradient-azul--45);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#sobre > div:not(:has(> h2)){
+#sobre #text{
     width: 65%;
     max-width: 350px;
     display: flex;
     justify-content: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
-    margin: 25px 0 40px;
+    margin: 30px 0 40px;
+    z-index: 5;
 }
 
 #sobre > div p{
@@ -481,34 +480,96 @@ hr{
 }
 
 footer{
+    position: relative;
     width: 100%;
-    height: 200px;
-    background: linear-gradient(to top, #202020, #404040);
-    padding: 35px;
+    background: var(--gradient-footer);
+    padding: 20% 10%;
 }
 
 #content{
+    position:relative;
     width: 80%;
-    max-width: 800px;
-    margin: 0 auto 85px;
-}
-
-#content p{
+    min-width: 250px;
+    max-width: 900px;
+    margin: 0 auto;
     font-family: var(--txt-font-inter);
-    font-weight: 500;
-    font-size: .8rem;
     color: white;
+    z-index: 5;
 }
 
-#content p span{
-    font-weight: 700;
+#content > p{
+    font-weight: 500;
+    font-size: .9rem;
+    text-align: justify;
+    line-height: 1.2rem;
+    margin-bottom: 50px;
+}
+
+#content .link-foot{
+    font-weight: 500;
+    border-bottom: 1px solid white;
+}
+
+#content .link-foot:hover{
+    color: var(--cor-azul-3d);
+    border-bottom: 1px solid var(--cor-azul-3d);
+}
+
+#content .dev-link{
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
     font-style: italic;
+}
+
+#content > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#content ul{
+    width: fit-content;
+}
+
+#content > div a{
+    display: flex;
+    gap: 10px;
+    color: white;
+    transition: background-color .3s;
+}
+
+#content > div a:hover{
+    display: flex;
+    gap: 10px;
+    color: var(--cor-azul-3d);
+}
+
+.footer-item div{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+#content > div a:hover > div{
+    background: var(--cor-azul-3d);
+}
+
+.footer-item div img{
+    width: 100%;
+    object-fit: cover;
 }
 
 @media (min-width: 769px){
 
     #navbar{
-        max-width: 950px;
+        max-width: 900px;
         padding: 0;
     }
 
@@ -619,7 +680,8 @@ footer{
     #inicio{
         flex-direction: row;
         height: calc(100vh + 85px);
-        gap: 100px;
+        justify-content: start;
+        gap: 150px;
     }
 
     #inicio > div.texto{
@@ -707,35 +769,14 @@ footer{
         width: 240px;
     }
 
-    #sobre > div:not(:has(> h2)){
-        width: 65%;
+    #sobre #text{
+        width: 50%;
         max-width: 800px;
         min-height: 200px;
         background: none;
         justify-content: space-between;
         border-radius: 10px;
         margin-bottom: 65px;
-    }
-    
-    #img-sobre{
-        display: block;
-        width: 45%;
-        padding: 30px;
-    }
-
-    #img-sobre img{
-        width: 100%;
-        object-fit: cover;
-        animation: 1ms ease-in-out forwards surge-img;
-        animation-timeline: view();
-        animation-range: cover 0% cover 45%;
-    }
-
-    #sobre > div p{
-        width: 50%;
-        border-radius: 0;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
     }
 
     #techs{
@@ -777,10 +818,6 @@ footer{
         filter: inherit;
         -webkit-filter: inherit;
         opacity: 100%;
-    }
-
-    #projetos{
-        padding: 110px 0;            
     }
 
     #projetos > ul{
@@ -848,6 +885,8 @@ footer{
         box-shadow: 0px 2px 5px rgba( 0, 0, 0, .3);
         opacity: 100%;
     }
-        
 
+    footer{
+        padding: 80px 100px 140px;
+    }
 }
