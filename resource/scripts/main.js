@@ -1,4 +1,3 @@
-import {sql} from '../data/database.js'
 
 const listaProjetos = document.getElementById('lista-projetos');
 const btnProjeto = document.getElementById('btn-proj');
