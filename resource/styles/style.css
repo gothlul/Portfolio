@@ -698,6 +698,7 @@ footer{
         -webkit-text-fill-color: transparent;
         font-family: var(--txt-font-inter);
         font-weight: 600;
+        font-size: 1rem;
     }
 
     #navbar hr:has(+ .nav-item:hover), #navbar .nav-item:hover + hr{
