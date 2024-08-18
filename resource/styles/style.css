@@ -161,12 +161,10 @@ header.scroll{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-#hamburguer.menu-open{
-    z-index: 10;
-    position: absolute;
-    transform: translateX(120%);   
+    transition: all .4s;
+    position: relative;
+    right: 0;
+    z-index: 10;     
 }
 
 #hamburguer div{
@@ -174,7 +172,7 @@ header.scroll{
     height: 4px;
     background: var(--gradient-azul--45);
     border-radius: 2px;
-    transition: all 2s;
+    transition: all .4s;
 }
 
 #hamburguer.menu-open div:first-child{
@@ -205,6 +203,7 @@ header.scroll{
     justify-content: center;
     align-items: center;
     padding: 20px;
+    transition: all .4s;
 }
 
 #navbar #hamburguer.menu-open + nav{
@@ -221,6 +220,12 @@ header.scroll{
 #navbar hr{
     height: 3px;
     margin: 30px 10px;
+    width: 80%;
+}
+
+#navbar hr:nth-child(5){
+    width: 120%;
+    margin: 30px 0px;
 }
 
 #navbar hr:first-child, #navbar hr:last-child{
@@ -659,6 +664,7 @@ footer{
         box-shadow: unset;
         padding: 0px;
         align-items: unset;   
+        transition: unset;
     }
 
     #navbar nav > ul{
@@ -667,7 +673,8 @@ footer{
         flex-direction: row;
     }
 
-    #navbar hr{
+    #navbar hr, #navbar hr:nth-child(5){
+        display: block;
         width: 2px;
         min-width: inherit;
         height: 25%;
