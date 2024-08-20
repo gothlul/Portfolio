@@ -5,7 +5,7 @@
     --cor-bg-defult: linear-gradient(to top, #FEFEFE, #FFFFFF);
     --cor-nav-motion: rgba( 255, 255, 255, .95);
     
-    --cor-azul-3d: #0ca5cf;
+    --cor-azul-3d: #13B8E6;
     --cor-azul-6e: #1828B7;
     --cor-azul-12: #141c66;
     --cor-azul-14: #171b3f;
@@ -19,7 +19,7 @@
     --gradient-cinza--45: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .08));
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
     --gradient-footer: linear-gradient( to top, var(--cor-azul-14), var(--cor-azul-12));
-
+    
     --bg-btn: white;
     --bg-tec: linear-gradient( -45deg, rgba( 0, 0, 0, .2), rgba( 0, 0, 0, .05));
     --bg-card: white;  
@@ -34,10 +34,12 @@
 
 body.drk{
     --cor-bg-defult: linear-gradient(to top, #151515, #202020);
-    --cor-nav-motion: rgba( 33, 33, 33, .95);
+    --cor-nav-motion: rgb( 20, 20, 20);
 
-    --cor-azul-3d: #22C7F5;
-    --cor-azul-6e: #1828B7;
+    --cor-azul-3d: #FF9900;
+    --cor-azul-6e: #FF5C00;
+    --cor-azul-12: #AE3F00;
+    --cor-azul-14: #2E2724;
     --cor-cinza-16: #050505;
     --cor-cinza-7: #757575;
     --cor-cinza-3: #C3C3C3;
@@ -46,6 +48,7 @@ body.drk{
     --gradient-ocean: radial-gradient(#C8EADE, var(--cor-azul-3d), var(--cor-azul-6e));
     --gradient-cinza--45: linear-gradient( -45deg, rgba( 255, 255, 255, .1), rgba( 255, 255, 255, .25));
     --gradient-azul-left: linear-gradient( to left, var(--cor-azul-6e), var(--cor-azul-3d));
+    --gradient-footer: linear-gradient( to top, var(--cor-azul-14), var(--cor-azul-12));
     
     --bg-btn: #202020;
     --bg-tec: linear-gradient( -45deg, rgba( 255, 255, 255, .01), rgba( 255, 255, 255, .15));
@@ -86,7 +89,6 @@ header{
 }
 
 header.scroll{
-    height: 70px;
     background: var(--cor-nav-motion);
     backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px rgba( 0, 0, 0, .5);
@@ -118,38 +120,27 @@ header.scroll{
 
 #switch{
     width: 45px;
-    height: 30px;
+    height: 45px;
+    position: absolute;
     appearance: none;
-    background: linear-gradient(white, white) padding-box, var(--gradient-azul--45) border-box;
+    top: 25px;
+    left: 40px;
+    background: white url('../img/icons/icon-moon-bg.svg') no-repeat center center;
+    background-size: 50% 50%;
     border-radius: 100px;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid transparent;
+    box-shadow: 0px 0px 5px 0px inset rgba( 0, 0, 0, .5);
     transition: all .4s;
 }
 
-#switch:before{
-    content: '';
-    width: 22px;
-    height: 22px;
-    background: url(../img/icons/icon-sun-bg.svg) no-repeat center center;
-    background-size: cover;
-    position: absolute;
-    border-radius: 100px;
-    margin: 2px;
-    transform: translateX(-30%);
-    transition: transform .4s;
-}
-
 #switch:checked{
-    background: linear-gradient(#202020, #202020) padding-box, var(--gradient-azul--45) border-box;
-}
-
-#switch:checked:before{
-    background: url(../img/icons/icon-moon-bg.svg) no-repeat center center;
-    transform: translateX(30%);
+    background: transparent url(../img/icons/icon-sun-bg.svg) no-repeat center center;
+    background-size: 65% 65%;
+    filter: invert();
+    -webkit-filter: invert();
+    box-shadow: 0px 4px 5px 0px rgba( 255, 255, 255, .5);
 }
 
 
@@ -204,14 +195,18 @@ header.scroll{
     align-items: center;
     padding: 20px;
     transition: all .4s;
-    gap: 20%;
+    gap: 15%;
+}
+
+.drk #navbar nav{
+    background: var(--cor-nav-motion);
 }
 
 #navbar #hamburguer.menu-open + nav{
-    transform: translateX(-100%);
+    transform: translateX(calc(-80vw - 75px));
 }
 
-#navbar nav ul{
+#navbar nav ul#menu{
     display: flex;
     width: 40%;
     flex-direction: column;
@@ -235,17 +230,14 @@ header.scroll{
 
 #navbar #redes-mobile{
     display: flex;
-    right: 50%;
-    bottom: 10%;
     flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
-    transform: translateX(50%);
+    align-items: center;
+    gap: 15px;
 }
 
 #redes-mobile li {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
 }
 
 .rede{
@@ -637,7 +629,10 @@ footer{
 }
 
 #content ul{
+    display: flex;
+    flex-direction: column;
     width: fit-content;
+    gap: .8rem;
 }
 
 #content > div a{
@@ -675,6 +670,14 @@ footer{
 
 @media (min-width: 769px){
 
+    header{
+        height: 100px;
+    }
+
+    header.scroll{
+        height: 95px;
+    }
+
     #navbar{
         max-width: 900px;
         padding: 0;
@@ -708,12 +711,17 @@ footer{
         top: unset;
         right: unset;
         box-shadow: unset;
+        background: unset;
         padding: 0px;
         align-items: unset;   
         transition: unset;
     }
 
-    #navbar nav > ul{
+    .drk #navbar nav{
+        background: unset;
+    }
+
+    #navbar nav > ul#menu{
         height: 100%;
         width: unset;
         flex-direction: row;

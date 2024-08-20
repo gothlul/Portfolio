@@ -13,3 +13,7 @@ hamburguer.addEventListener('click', openMenu);
 function openMenu(){
     hamburguer.classList.toggle('menu-open');
 }
+
+function drkMode(){
+    body.classList.toggle('drk');
+}
