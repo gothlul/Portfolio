@@ -7,8 +7,8 @@
     <title>Portfolio - Lucas Rasoppi</title>
     <link rel="icon" href="resource/img/akua.svg" type="image/x-icon">
     <link rel="stylesheet" href="resource/styles/style.css" type="text/css">
-    <script src="resource/scripts/main.js" defer></script>
-    <script src="resource/scripts/interations.js" defer></script>
+    <script src="resource/scripts/javascript/main.js" defer></script>
+    <script src="resource/scripts/javascript/interations.js" defer></script>
 </head>
 
 <body>
