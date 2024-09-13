@@ -1,8 +1,8 @@
-# Usar uma imagem PHP oficial com Apache
+# Use a imagem PHP oficial
 FROM php:8.0-apache
 
-# Copiar o código para o diretório do Apache
+# Copie o código da aplicação para o diretório do Apache
 COPY . /var/www/html/
 
-# Expor a porta 80
+# Exponha a porta 80
 EXPOSE 80
