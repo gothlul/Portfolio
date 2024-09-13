@@ -2,7 +2,7 @@
 FROM php:8.0-apache
 
 # Copie o código da aplicação para o diretório do Apache
-COPY resource/ /var/www/html/
+COPY . /var/www/html/
 
 # Ajuste as permissões dos arquivos
 RUN chown -R www-data:www-data /var/www/html
