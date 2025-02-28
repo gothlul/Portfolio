@@ -10,7 +10,9 @@
     <script src="resource/scripts/javascript/main.js" defer></script>
     <script src="resource/scripts/javascript/interations.js" defer></script>
 </head>
-
+<?php
+    require_once "resource/database/variables.php";
+?>
 <body>
     <header>
         <div id="navbar">
@@ -89,28 +91,18 @@
                 <hr>
             </div>
             <ul>
-                <li class="tec"><img src="resource/img/icons/icon-html.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-css.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-javascript.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-php.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-figma.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-git.svg"></li>
+                <?php
+                    $dir = 'resource/img/icons/tacs';
+                    $itens = scandir($dir);
+                    $i = 0;
 
-                <li class="tec"><img src="resource/img/icons/icon-html.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-css.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-javascript.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-php.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-figma.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-git.svg"></li>
-
-                <li class="tec"><img src="resource/img/icons/icon-html.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-css.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-javascript.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-php.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-figma.svg"></li>
-                <li class="tec"><img src="resource/img/icons/icon-git.svg"></li>
+                    while($i < count($itens)){
+                        echo `<li class="tec"><img src="resource/img/icons/tecs/`.$itens[$i].`"></li>`;
+                        $i++;
+                    }
+                ?>
             </ul>
-            <button class="btn" onclick="loading()">
+            <button class="btn" onclick="loadingTecs()">
                 <p>Ver mais</p>
             </button>
         </section>
@@ -123,6 +115,54 @@
             <button id="btn-proj" class="btn" onclick="loading()">
                 <p>Ver mais</p>
             </button>
+        </section>
+
+        <section id="contato">
+            <div id="new-contact">
+                <h3 class="titulo">Deixe seu contato</h3>
+                <form action="resource/scripts/php/add_client.php" method="post">
+                    <label for="nome">Nome: </label>
+                    <inut type="text" id="nome" name="nome"/>
+
+                    <label for="email">Email: </label>
+                    <inut type="email" id="email" name="email"/>
+
+                    <label for="tel">Telefone: </label>
+                    <inut type="tel" id="tel" name="tel"/>
+
+                    <button type="submit">Enviar<button>
+                </form>
+            </div>
+            <div id="new-freelance">
+                <h3 class="titulo">Peça um Freelance</h3>
+                <form action="resource/scripts/php/add_freela.php" method="post">
+                    <label for="nome">Seu nome: </label>
+                    <inut type="text" id="nome" name="nome"/>
+
+                    <label for="email">Melhor email: </label>
+                    <inut type="email" id="email" name="email"/>
+
+                    <label for="desc">Descrição do projeto: </label>
+                    <inut type="desc" id="desc" name="desc"/>
+
+                    <label for="budget">Valor da proposta(em reais): </label>
+                    <inut type="budget" id="budget" name="budget"/>
+
+                    <select id="tipo" name="tipo">
+                        <?php
+
+                        ?>
+                    </select>
+
+                    <label for="entrega">Data de entrega: </label>
+                    <inut type="entrega" id="entrega" name="entrega"/>
+
+                    <label for="tel">Telefone: </label>
+                    <inut type="tel" id="tel" name="tel"/>
+
+                    <button type="submit">Propor<button>
+                </form>
+            </div>
         </section>
 
     </main>

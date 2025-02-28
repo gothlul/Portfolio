@@ -2,17 +2,35 @@
 
     require_once '../../database/connection.php';
 
-    class Remetente{
-        public $nameRMT;
-        public $telRMT;
-        public $cargoRMT;
-        public $compRMT;
+    class Project{
+        public $id;
+        public $bunner;
+        public $description;
+        public $tecs;
+        public $link;
+        public $github;
+
+        public function __construct($id, $bunner, $desc, $tecs, $link, $repo){
+            $this->id = $id;
+            $this->bunner = $bunner;
+            $this->description = $desc;
+            $this->tecs = $tecs;
+            $this->link = $link;
+            $this->github = $repo;
+        }
+    }
+
+    class Client{
+        public $name;
+        public $email;
+        public $projDesc;
+        public $budget;
 
         public function __construct($nome, $tel, $cargo, $comp){
-            $this->nameRMT = $nome;
-            $this->telRMT = $tel;
-            $this->cargoRMT = $cargo;
-            $this->compRMT = $comp; //empresa
+            $this->name = $nome;
+            $this->email = $tel;
+            $this->projDesc = $cargo;
+            $this->budget = $comp; //empresa
         }
     }
 
@@ -38,7 +56,7 @@
             );
         }
         
-        public function addTask($name, array $tags, $days, Remetente $client){
+        public function addTask($name, array $tags, $days, Client $client){
             $this->nameTask = $name;
             $this->tagList = $tags;
             $this->prazo = 86400000*$days;
@@ -47,7 +65,7 @@
 
             $newTask = array(
                 "name" => "$this->nameTask",
-                "description" => "Formulário enviado por ".$this->client->nameRMT.", ".$this->client->cargoRMT." na empresa ".$this->client->compRMT.". O número de telefone informado para contato é: ".$this->client->telRMT,
+                "description" => "Formulário enviado por ".$this->client->name.", ".$this->client->budget." na empresa ".$this->client->projDesc.". O número de telefone informado para contato é: ".$this->client->email,
                 "assignees" => array(183),
                 "tags" => $this->tagList,
                 "status" => "",
